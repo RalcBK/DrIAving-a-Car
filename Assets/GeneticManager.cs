@@ -17,7 +17,7 @@ public class GeneticManager : MonoBehaviour
     [Header("Padres e hijos")]
     public int Mejores = 8;
     public int Peores = 3;
-    public int Combinaciones;
+    public int Hijos;
 
     private List<int> genePool = new List<int>();
 
@@ -59,12 +59,12 @@ public class GeneticManager : MonoBehaviour
             population[currentGenome].fitness = fitness;
             currentGenome++;
             ResetToCurrentGenome();
-            Debug.Log("Me mori, soy el numero: " + currentGenome + "fitness:" + fitness);
         }
         else
         {
+            population[currentGenome].fitness = fitness;
+            currentGenome++;
             RePopulate();
-            Debug.Log("Me mori, soy el numero: " + currentGenome + "fitness:" + fitness);
         }
     }
 
@@ -89,7 +89,7 @@ public class GeneticManager : MonoBehaviour
 
     private void Mutate(NNet[] newPopulation)
     {
-        for (int i = 0; i < naturallySelected; i++)
+        for (int i = 1; i < naturallySelected; i++)
         {
             for (int j = 0; j < newPopulation[i].weights.Count; j++)
             {
@@ -120,7 +120,7 @@ public class GeneticManager : MonoBehaviour
 
     private void Crossover(NNet[] newPopulation)
     {
-        for (int i = 0; i < Combinaciones; i += 2)
+        for (int i = 0; i < Hijos; i += 2)
         {
             int AIndex = i;
             int BIndex = i + 1;
@@ -237,7 +237,6 @@ public class GeneticManager : MonoBehaviour
     void Start()
     {
         CreatePopulation();
-        
     }
 
     // Update is called once per frame

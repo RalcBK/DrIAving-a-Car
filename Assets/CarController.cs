@@ -34,7 +34,6 @@ public class CarController : MonoBehaviour
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
         network = GetComponent<NNet>();
-
     }
 
     public void ResetWithNetwork(NNet net)
@@ -60,8 +59,10 @@ public class CarController : MonoBehaviour
         Death();
     }
 
+
     private void Death()
     {
+        Debug.Log("Soy el: " + GameObject.FindObjectOfType<GeneticManager>().currentGenome + "Fitness:" + overallFitness);
         GameObject.FindObjectOfType<GeneticManager>().Death(overallFitness, network);
     }
 

@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 2065999914}
   - component: {fileID: 2065999913}
   m_Layer: 0
-  m_Name: _Manager
+  m_Name: GeneticManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,11 +947,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1130656586}
-  initialPopulation: 5
-  mutationRate: 0.055
-  bestAgentSelection: 2
-  worstAgentSelection: 0
-  numberToCrossover: 2
+  Poblacion: 85
+  ProbabilidadMutacion: 0.055
+  Mejores: 8
+  Peores: 3
+  Hijos: 39
   currentGeneration: 0
   currentGenome: 0
 --- !u!4 &2065999914
@@ -1173,7 +1173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5006512736323262010}
   m_Layer: 0
-  m_Name: Course01
+  m_Name: Course
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

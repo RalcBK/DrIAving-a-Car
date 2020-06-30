@@ -36,7 +36,6 @@ public class NNet : MonoBehaviour
 
             biases.Add(Random.Range(-1f, 1f));
 
-            //Weights
             if (i == 0)
             {
                 Matrix<float> inputToH1 = Matrix<float>.Build.Dense(3, hiddenNeuronCount);
@@ -130,7 +129,6 @@ public class NNet : MonoBehaviour
         }
 
         outputLayer = ((hiddenLayers[hiddenLayers.Count - 1] * weights[weights.Count - 1]) + biases[biases.Count - 1]).PointwiseTanh();
-
         
         return (Sigmoid(outputLayer[0, 0]), (float)Math.Tanh(outputLayer[0, 1]));
     }
