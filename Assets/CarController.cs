@@ -44,7 +44,6 @@ public class CarController : MonoBehaviour
 
     private void Reset()
     {
-
         timeSinceStart = 0f;
         totalDistanceTravelled = 0f;
         avgSpeed = 0f;
@@ -137,6 +136,7 @@ public class CarController : MonoBehaviour
     {
         inp = Vector3.Lerp(Vector3.zero, new Vector3(0, 0, a * 11.4f), 0.02f);
         inp = transform.TransformDirection(inp);
+        inp.y = 0f;
         transform.position += inp;
 
         transform.eulerAngles += new Vector3(0, (r * 90) * 0.02f, 0);

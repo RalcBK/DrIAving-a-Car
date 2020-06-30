@@ -89,7 +89,7 @@ public class GeneticManager : MonoBehaviour
 
     private void Mutate(NNet[] newPopulation)
     {
-        for (int i = 1; i < naturallySelected; i++)
+        for (int i = 0; i < naturallySelected; i++)
         {
             for (int j = 0; j < newPopulation[i].weights.Count; j++)
             {
