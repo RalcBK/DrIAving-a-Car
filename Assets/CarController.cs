@@ -61,7 +61,9 @@ public class CarController : MonoBehaviour
 
     private void Death()
     {
+        if( GameObject.FindObjectOfType<GeneticManager>().currentGenome == 0){
         Debug.Log("Soy el: " + GameObject.FindObjectOfType<GeneticManager>().currentGenome + "Fitness:" + overallFitness);
+        }
         GameObject.FindObjectOfType<GeneticManager>().Death(overallFitness, network);
     }
 
